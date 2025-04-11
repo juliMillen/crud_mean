@@ -22,11 +22,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th>Coca Cola</th>
-                        <td>Bebida</td>
-                        <td>Buenos Aires</td>
-                        <td>2700</td>
+                      <tr *ngFor="let prod of productos">
+                        <th>{{prod.nombre}}</th>
+                        <td>{{prod.categoria}}</td>
+                        <td>{{prod.ubicacion}}</td>
+                        <td>{{prod.precio}}</td>
                         <td><i class="fa-solid fa-trash text-danger"></i></td>
                         <td><i class="fa-solid fa-pen-to-square text-primary"></i></td>
                       </tr>
