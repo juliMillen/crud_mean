@@ -46,8 +46,9 @@ export class CrearProductoComponent implements OnInit{
     if(this.id !== null){
       //editar el producto
       this.productoService.editarProducto(this.id,producto).subscribe(data =>{
-        console.log("Produto actualizado correctamente");
+        console.log("Producto actualizado correctamente");
         this.route.navigate(['/']);
+        
       }, error => {
         console.log("Error al intentar actualizar el producto" + error);
         this.productoForm.reset();
