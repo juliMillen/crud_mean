@@ -11,7 +11,7 @@
                     Agregar Producto
                 </button>
 
-                <table class="table table-striped">
+                <table *ngIf="productos.length > 0" class="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">Producto</th>
@@ -27,11 +27,20 @@
                         <td>{{prod.categoria}}</td>
                         <td>{{prod.ubicacion}}</td>
                         <td>{{prod.precio}}</td>
-                        <td><i class="fa-solid fa-trash text-danger"></i></td>
-                        <td><i class="fa-solid fa-pen-to-square text-primary"></i></td>
+                        <td>
+                          <button>
+                            <i (click)="eliminarProducto(prod._id)" class="fa-solid fa-trash text-danger"></i>
+                          </button>
+                        </td>
+                        <td>
+                          <button>
+                            <i [routerLink]="['/editar-producto', prod._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                          </button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
+                  <h5 *ngIf="productos.length == 0">No hay productos para mostrar</h5>
             </div>
         </div>
     </div>
